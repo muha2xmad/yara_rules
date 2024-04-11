@@ -1,6 +1,6 @@
 rule DCRat {
     meta:
-        author = "Muammad Hasan Ali @muha2xmad"
+        author = "Muammad Hasan Ali @muha2xmad "
         date = "2023-09-03"
         description = "YARA rule for DCRat indicators"
     strings:

@@ -15,9 +15,9 @@ rule mal_ArrowRAT {
         $str3 = "C:\\Windows\\System32\\ComputerDefaults.exe" wide fullword
         $str4 = "Software\\Classes\\ms-settings\\shell\\open\\command" wide fullword
         $str5 = "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -Command Add-MpPreference -ExclusionPath '" fullword wide
-        $key = "CqbkTHriRRbQjaArtJfF" fullword wide
+        $str6 = "CqbkTHriRRbQjaArtJfF" fullword wide
 
 
     condition:
-        uint16(0) == 0x5a4d and (all of ($b64_reg*)) and $key and (4 of ($str*))
+        uint16(0) == 0x5a4d and (1 of ($b64_reg*)) and (4 of ($str*))
 }

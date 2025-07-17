@@ -45,4 +45,20 @@ rule mal_RedLine {
 }
 
 
+rule mal_RedLine {
+    meta:
+        description = "Detects RedLine Stealer"
+        author = "Muhammad Hasan Ali @muha2xmad"
+        date = "15-07-2025"
+        hash1 = "13e9042f6fa0c525b1cbe97d3273b1c0ae0b63e426ffaeec7caa3e11786141f2"
+    strings:
+            $str1 = "Pseudish" fullword wide
+            $str2 = "[^\\u0020-\\u007F]UNKNOWN" fullword wide
+            $str3 = "CoCryptographyokieCryptographysN" fullword wide
+            $str4 = "cstringmstringd" fullword wide
+
+
+    condition:
+        uint16(0) == 0x5a4d and (2 of ($str*))
+}
 

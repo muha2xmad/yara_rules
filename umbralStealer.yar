@@ -8,15 +8,15 @@ rule mal_UmbralStealer {
             $str2 = "os get Caption" fullword wide
             $str3 = "Get-ItemPropertyValue -Path 'HKLM:System\\CurrentControlSet\\Control\\Session Manager\\Environment' -Name PROCESSOR_IDENTIFIER" fullword wide
             $str4 = "path win32_VideoController get name" fullword wide
-            $str5 = "Umbral Stealer" wide
-            $str6 = "https://github.com/Blank-c/Umbral-Stealer" fullword wide
-            $str7 = "Opera/9.80 (Windows NT 6.1; YB/4.0.0) Presto/2.12.388 Version/12.17" fullword wide
-            $str8 = "_\\|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items\\.\\|_[A-Z0-9]+" fullword wide
+            $str5 = "Opera/9.80 (Windows NT 6.1; YB/4.0.0) Presto/2.12.388 Version/12.17" fullword wide
+            $str6 = "_\\|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items\\.\\|_[A-Z0-9]+" fullword wide
 
-
-        
+            $xstr1 = "Umbral Stealer" wide
+            $xstr2 = "https://github.com/Blank-c/Umbral-Stealer" fullword wide
     condition:
-        uint16(0) == 0x5a4d and  (6 of ($str*) )
-        
+        uint16(0) == 0x5a4d 
+        and (
+            5 of them
+            or 1 of ($xstr*)
+        )
 }
-

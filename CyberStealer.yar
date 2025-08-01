@@ -19,7 +19,7 @@ rule mal_CyberStealer {
     condition:
         uint16(0) == 0x5a4d 
         and  (
-            5 of ($str*) 
+            5 of them 
             or 1 of ($cc*) )
         
 }

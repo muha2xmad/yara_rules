@@ -14,9 +14,5 @@ rule mal_ElizaRAT {
 
            
     condition:
-        uint16(0) == 0x5a4d 
-        and (
-            2 of ($xstr*)
-            or  1 of ($str*) 
-        )
+            2 of them or  1 of ($str*) 
 }
